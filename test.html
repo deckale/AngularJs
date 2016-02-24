@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js"></script>
+	</head>
+
+	<body>
+
+		<div>
+			<div data-ng-app="myApp">
+				<div data-ng-controller="myCtrl">
+					<h1>{{carname}}</h1>
+				</div>
+				
+				<div data-ng-controller="myCtrl2">
+					<h1>{{carname}}</h1>
+				</div>
+			</div>
+			<script>
+				var app = angular.module("myApp",[]);
+				app.controller("myCtrl",function($scope){
+					$scope.carname="Volvo";
+				})
+			</script>
+		</div>
+	</body>
+
+</html>

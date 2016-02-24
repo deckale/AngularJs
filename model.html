@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js"></script>
+		<style type="text/css">
+				ipnut.ng-invalid
+				{
+					background-color: green;
+				}
+				
+			</style>
+	</head>
+
+	<body>
+		<!-- ng-model 指令用于绑定应用程序数据到HTML 控制器(input,select,textarea)的值 -->
+		<div>
+			<!--<div data-ng-app="myApp" data-ng-controller="myCtrl">
+				名字:
+				<input data-ng-model="name">
+			</div>
+
+			<script type="text/javascript">
+				var app = angular.module("myApp", []);
+				app.controller("myCtrl", function($scope) {
+					$scope.name = "John Doe";
+				});
+			</script>-->
+		</div>
+
+		<!-- 双向绑定 -->
+		<div>
+			<!--<div data-ng-app="myApp2" data-ng-controller="myCtrl2">
+				名字:
+				<input data-ng-model="name2">
+				<h1>输入了: {{name2}}</h1>
+			</div>
+			<script type="text/javascript">
+				var app2 = angular.module("myApp2",[]);
+				app2.controller("myCtrl2",function($scope)
+				{
+					
+				});
+			</script>-->
+		</div>
+
+		<!-- 验证用户输入  , 提示信息会在 ng-show 属性返回 true 的情况下显示-->
+		<div>
+			<!--<form data-ng-app="myApp3" name="myForm">
+				Email:
+				<input type="email" name="myAddress" data-ng-model="text">
+				<span data-ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
+			</form>
+			<script type="text/javascript">
+				var app3 = angular.module("myApp3", []);
+			</script>-->
+		</div>
+		
+		<!-- 应用状态 ng-model可以为 应用数据提供状态值(invalid, dirty, touched, error)-->
+		<div>
+			<!--<form data-ng-app="myApp4" name="myForm2" data-ng-init="myText2='@text@runoob.com'">
+				Email:<input type="email" name="myAddress" data-ng-model="myText2" required />
+				<h1>状态</h1>
+				是否验证通过:{{myForm2.myAddress.$valid}}<br />
+				是否被修改过:{{myForm2.myAddress.$dirty}}<br />
+				是否被点击过:{{myForm2.myAddress.$touched}}
+			</form>
+			
+			<script type="text/javascript">			
+				var app4 = angular.module("myApp4",[]);
+			</script>-->
+		</div>
+		
+		<!-- ng-model 指令基于他们的状态为HTML 元素提供了Css类-->
+		<!-- ng-model 指令根据表单域的状态添加/移除以下类:
+			ng-empty,
+			ng-not-empty,
+			ng-touched,
+			ng-untouched,
+			ng-valid,
+			ng-invalid,
+			ng-dirty,
+			ng-pending,
+			ng-pristine
+		-->
+		
+		<div>
+			
+			<form data-ng-app="myApp5" name="myForm3">
+				输入你的名字:<input name="myAddress3" data-ng-model="text3" required>
+			</form>
+			<script type="text/javascript">
+				var app5 = angular.module("myApp5",[]);
+			</script>
+			
+			
+		</div>
+	</body>
+
+</html>

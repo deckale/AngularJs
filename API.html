@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js" ></script>
+	</head>
+	<body>
+		
+		<!--  -->
+		<div>
+			<div data-ng-app="myApp" data-ng-controller="myCtrl">
+				<p>{{x1}}</p>
+				<p>{{x2}}</p>
+				<p>{{x3}}</p>
+			</div>
+		</div>
+		<script>
+			var app = angular.module("myApp",[]);
+			app.controller("myCtrl",function($scope){
+				$scope.x1 = "JOHN";
+				$scope.x2 = angular.isString($scope.x1);
+				$scope.x3 = angular.isNumber($scope.x1);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js"></script>
+	</head>
+
+	<body>
+		<!-- angularjs为HTML DOM 元素的属性提供了绑定应用数据的指令 -->
+
+		<!-- ng-disabled指令:
+			 ng-disabled指令直接绑定应用数据到HTML的disabled属性
+		-->
+		<div>
+			<div data-ng-app="" data-ng-init="mySwitch=true">
+				<p>
+					<button data-ng-disabled="mySwitch">click me!</button>
+				</p>
+
+				<p>
+					<input type="checkbox" data-ng-model="mySwitch">button
+				</p>
+
+				<p>
+					{{mySwitch}}
+				</p>
+				
+				<!-- ng-show指令:
+					 隐藏或显示一个HTML元素
+				-->
+				<p data-ng-show="true">I'm visible-show</p>
+				<p data-ng-show="false">I'm invisible-show</p>
+				
+				<!-- ng-show 指令根据value的值来显示(隐藏)HTML元素,所以可以使用表达式来计算布尔值  -->
+				<p data-ng-show="hour < 12">I'm visible-show2</p>
+				
+				<!-- ng-hide 指令:
+					 ng-hide指令用于隐藏或显示HTML元素
+				-->
+				<p data-ng-hide="true">I'm invisible-hide</p>
+				<p data-ng-hide="false">I'm visible-hide</p>
+			</div>
+		</div>
+
+	</body>
+
+</html>

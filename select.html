@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!-- angularjs 可以使用数组或对象创建一个下拉列表选项 -->
+		<div>
+			<div data-ng-app="myApp" data-ng-controller="myCtrl">
+				<select data-ng-model="selectedName" data-ng-options="x for in names"></select>
+			</div>
+
+			<script>
+				var app = angular.module("myApp", []);
+				app.controller("myCtrl", function($scope) {
+					$scope.names = ["google", "runoob", "taobao"];
+				});
+			</script>
+		</div>
+
+		<!--也可以使用option-->
+		<div>
+			<select>
+				<option data-ng-repeat="x in names">{{x}}</option>
+			</select>
+		</div>
+
+		<!-- ng-repeat指令时通过数组来循环HTML代码来创建下拉列表,蛋ng-options指令更适合创建下拉列表,他有一下优势:
+			  使用ng-options的选项的一个对象, ng-repeat是一个字符串
+		-->
+
+		<!-- 那应该如何抉择 -->
+		<div>
+			<script>
+				//假设有如下对象:
+				$scope.sites = [{
+					site: "google",
+					url: "http://www.google.com"
+				}, {
+					site: "runoob",
+					url: "http://www.runoob.com"
+				}, {
+					site: "taobao",
+					url: "http://www.taobao.com"
+				}];
+			</script>
+			
+			<select data-ng-model="selectedSite">
+				<option data-ng-repeat="x in sites" value="{{x.site}}">{{x.site}}</option>
+			</select>
+			<h1>你选择的是{{selectedSite}}</h1>
+			
+			<!-- OR -->
+			<select data-ng-model="selectedSite" data-ng-options="x.site for x in sites"></select>
+			<h1>你选择的是:{{selectedSite.site}}</h1>
+			<p>网址为: {{selectedSite.url}}</p>
+
+		</div>
+		
+		<!--以数据源为对象-->
+		<div>
+			<script>
+				$scope.sites={
+					site01:"google",
+					site02:"runoob",
+					site03:"taobao"
+				}
+			</script>
+			
+			<!--ng-options 使用对象有很大的不同-->
+			<select data-ng-model="selectedSite" data-ng-options="x for (x,y) in sites"></select>
+			<h1>你选择的值是:{{selectedSite}}</h1>
+			<!--你选择的值为在key-value中的value,value 在key-value对中也可以是对象 -->
+			$scope.cars={
+				car01:{band:"Ford",model:"Mustang",color:"red"},
+				car02:{band:"Fiat",model:"500",color:"white"},
+				car03:{band:"Volvo",model:"XC90",color:"black"}
+			}
+			
+			<!---在下拉菜单也可以不适用key-value对中的key,直接使用对象的属性---->
+			<select data-ng-model="selectedCar" data-ng-options="y.brand for(x,y) in sites"></select>
+		</div>
+	</body>
+
+</html>

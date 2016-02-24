@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js" ></script>
+	</head>
+	<body>
+		<!-- 过滤器可以使用一个管道字符(|) 添加到表达式和指令中       
+			 Angularjs过滤器可用于转换数据:
+			 currency   ---- 格式化数字为货币格式
+			 filter     ---- 从数组项中选择一个子集
+			 lowercase  ---- 格式化字符串为小写
+			 orderBy    ---- 根据某个表达式排列数组
+			 uppercase  ---- 格式化字符串为大写
+		-->
+		<!-- 表达式中添加过滤器 :
+			 过滤器可以通过一个管道字符(|) 和一个过滤器添加到表达式中.
+			 ((下面的两个实例,我们将使用前面章节中提到的person控制器))
+			 uppercase 过滤器将字符串格式化为大写:
+			 lowercase 过滤器字符串将格式化为小写:
+		-->
+		<div>
+			<!--<div data-ng-app = "myApp" data-ng-controller="personCtrl">
+				<p>Name: {{lastName | uppercase}}</p>
+				<p>Name: {{lastName | lowercase}}</p>
+			</div>
+			<script type="text/javascript" src="js/personController.js" ></script>-->
+		</div>
+		
+		<div>
+			<!--<div data-ng-app="myApp2" data-ng-controller="costCtrl">
+				<input type="number" data-ng-model="quantity"><br />
+				<input type="number" data-ng-model="price"><br />
+				
+				<p>totalPrice:{{ (quantity * price) | currency}}</p>
+			</div>
+			<script>
+				var app2 = angular.module("myApp2",[]);
+				app2.controller("costCtrl",function($scope){});
+			</script>-->
+		</div>
+		
+		<!-- 向指令添加过滤器 -->
+		<div>
+			<!--<div data-ng-app="myApp" data-ng-controller="namesCtrl">
+				<ul>
+					<li data-ng-repeat="x in names">
+						{{x.name + ", " + x.country}}
+					</li>
+				</ul>
+			</div>
+			<script src="js/namesController.js"></script>-->
+		</div>
+		
+		<!-- 输入过滤  -->
+		<div>
+			<div data-ng-app="myApp" data-ng-controller="namesCtrl">
+				<p>输入过滤:<input type="text" data-ng-model="test"></p>
+				<ul>
+					<li data-ng-repeat="x in names | filter:test | orderBy:'country'">
+						{{ (x.name | uppercase) + ", " + x.country}}
+					</li>
+				</ul>
+			</div>
+			<script src="js/namesController.js"></script>
+		</div>
+		
+		
+		
+	</body>
+</html>

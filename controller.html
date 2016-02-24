@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js"></script>
+	</head>
+
+	<body>
+		<!-- angularjs 控制器 控制 angularjs 应用程序的数据 
+			 angularjs 控制器是常规的javascript 对象
+			 controller 是javascript对象,由标准的JavaScript对象的构造函数创建
+		-->
+		<div>
+			<!--<div data-ng-app="myApp" data-ng-controller="myCtrl">
+				firstName:
+				<input type="text" data-ng-model="firstName">
+				<br /> lastName :
+				<input type="text" data-ng-model="lastName">
+				<br />
+				<br /> name:{{firstName + " " + lastName}}
+
+			</div>
+
+			<script>
+				var app = angular.module("myApp", []);
+				app.controller("myCtrl", function($scope) {
+					$scope.firstName = "John";
+					$scope.lastName = "Doe";
+				});
+			</script>-->
+		</div>
+
+		<!-- 控制器方法 -->
+		<div>
+			<!--<div data-ng-app="myApp2" data-ng-controller="myCtrl2">
+				firstName:
+				<input type="text" data-ng-model="firstName">
+				<br /> lastName :
+				<input type="text" data-ng-model="lastName">
+				<br />
+				<br /> name:{{fullName()}}
+			</div>
+			<script>
+				var app2 = angular.module("myApp2", []);
+				app2.controller("myCtrl2", function($scope) {
+					$scope.firstName = "John";
+					$scope.lastName = "Doe";
+					$scope.fullName = function() {
+						return $scope.firstName + " " + $scope.lastName;
+					}
+				});
+			</script>-->
+		</div>
+
+		<!--外部文件中控制器 :
+			在大型的应用程序中,通常是把控制器存储在外部文件中.
+			只需要把<script>标签中的代码复制到名为personController.js的外部文件中即可
+		-->
+		<div>
+			<!--<div data-ng-app="myApp3" data-ng-controller="personCtrl">
+				FirstName:
+				<input type="text" data-ng-model="firstName" <br /> LastName :
+				<input type="text" data-ng-model="lastName">
+				<br />
+				<br /> FullName: {{firstName + " " + lastName}}
+			</div>
+			<script src="js/personController.js"></script>-->
+
+		</div>
+
+		<!--其他实例-->
+		<div>
+			<div data-ng-app="myApp4" data-ng-controller="namesCtrl">
+				<ul>
+					<li data-ng-repeat="x in names">
+						{{x.name + ", " + x.country}}
+					</li>
+				</ul>
+			</div>
+			<script src="js/namesController.js"></script>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js"></script>
+	</head>
+
+	<body>
+		<!--
+			AngularJs 中可以创建自定义的服务,或者使用内置服务.
+			
+			在AngularJs中服务是一个函数或者对象 
+		-->
+
+		<!-- $location服务,它可以返回当前页面的URL地址-->
+		<div>
+			<!--<script>
+				var app = angular.module("myApp",[]);
+				app.controller("customerCtrl",function($scope,$location){
+					myUrl = $location.absUrl();
+				}); 
+			</script>-->
+		</div>
+
+		<!-- $http 是angularJs 应用中最常见的服务,服务项服务器发送请求,应用响应服务器传送过来的数据-->
+		<div>
+			<!--<script>
+				var app = angular.module("myApp",[]);
+				app.controller("myCtrl",function($scope,$http){
+					$http.get("welcome.htm").then(function(response){
+						$scope.myWelcome = response.data;
+					});
+				});
+			</script>-->
+		</div>
+
+		<!--$timeout 服务对应了window.setTimeout函数-->
+		<div>
+			<!--<script>
+				var app = angular.module("muyApp", []);
+				app.controller("myCtrl", function($scope, $timeout) {
+					$scope.myHeader = "Hello World!";
+					$timeout(function() {
+						$scope.myHeader = "How are you today?";
+					}, 2000);
+				});
+			</script>-->
+		</div>
+
+		<!--$interval 对应window.setInterval函数-->
+		<div>
+			<!--<script>
+				var app = angular.module("myApp", []);
+				app.controller("myCtrl", function($scope, $interval) {
+							$scope.theTime = new Date().toLocaleTimeString();
+							$interval(function() {
+								{
+									$scope.theTime = new Date().toLocaleTimeString();
+								}, 1000);
+							});
+			</script>-->
+		</div>
+
+		<!--创建自定义服务-->
+		<div>
+			<script>
+				app.service("hexafy", function() {
+					this.myFunc = function(x) {
+						return x.toString(16);
+					}
+				});
+				//在使用自定义服务的时候,需要在定义控制器时独立添加
+				app.controller("myCtrl", function($scope, hexafy) {
+					$scope.hex = hexafy.myFunc(255);
+				});
+			</script>
+		</div>
+
+		<div>
+			<div data-ng-app="myApp" data-ng-controller="myCtrl">
+				<ul>
+					<li data-ng-repeat="x in counts">{{x | myFormat}}</li>
+				</ul>
+
+				<p>过滤器使用服务将10进制转换为16进制</p>
+				<script>
+					var app = angular.module("myApp", []);
+					app.service("heaxafy", function() {
+						this.myFunc = function(x) {
+							return x.tostring(16);
+						}
+					});
+					app.filter("myFormat", ["hexafy", function(hexafy) {
+						return function(x) {
+							return hexafy.myFunc(x);
+						};
+					}]);
+				</script>
+			</div>
+		</div>
+	</body>
+
+</html>

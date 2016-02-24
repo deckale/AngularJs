@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angularjs/1.4.6/angular.min.js"></script>
+	</head>
+
+	<body>
+		<div data-ng-app="">
+			<h2>My first Expression : {{ "5 + 5 :" + (5 + 5)}}</h2>
+
+			<div data-ng-init="quantity=10;cost=5">
+				<p>Total : {{quantity * cost}}</p>
+			</div>
+
+			<div data-ng-init="firstName='John';lastName='Doe'">
+				<p>Name: {{ firstName + " " + lastName}}</p>
+			</div>
+
+			<div data-ng-init="firstName='John';lastName='Doe'">
+				<p>Name :<span data-ng-bind="firstName + ' ' + lastName"></span></p>
+			</div>
+
+			<div data-ng-init="person={firstName:'John',lastName:'Doe'}">
+				<p>LastName : <span data-ng-bind="person.lastName"></span></p>
+			</div>
+
+			<div data-ng-init="points=[1,14,15,18,20]">
+				<p>the third num is : <span data-ng-bind="points[2]"></span></p>
+			</div>
+
+		</div>
+	</body>
+
+</html>

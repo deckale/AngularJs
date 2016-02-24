@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js" ></script>
+	</head>
+	<body>
+		<!-- ng-click-->
+		<div>
+			<!--<div data-ng-app="myApp" data-ng-controller="myCtrl">
+				<button data-ng-click="count=count+1">click me!</button>
+				<p>{{count}}</p>
+			</div>
+			
+			<script>
+				var app = angular.module("myApp",[]);
+				app.controller("myCtrl",function($scope)
+				{
+					$scope.count = 0;
+				});
+			</script>-->
+		</div>
+		
+		<div>
+			<!--<div data-ng-app="myApp" data-ng-controller="personCtrl">
+				<button data-ng-click="toggle()">hide/show</button>
+				<p data-ng-hide="myVar">
+					FirstName:<input type="text" data-ng-model="firstName"><br />
+					LastName :<input type="text" data-ng-model="lastName"><br />
+					<br />
+					Full Name:{{firstName +" "+ lastName}}
+				</p>
+			</div>
+			
+			<script>
+				var app = angular.module("myApp",[]);
+				app.controller("personCtrl",function($scope)
+				{
+					$scope.firstName="John";
+					$scope.lastName="Doe";
+					$scope.myVar = false;
+					$scope.toggle=function(){
+						$scope.myVar = !$scope.myVar;
+					}
+				});
+			</script>-->
+		</div>
+		
+		<div>
+			<div data-ng-app="myApp" data-ng-controller="personCtrl">
+				<button data-ng-click="toggle()">hide/show</button>
+				<p data-ng-show="myVar">
+					firstName:<input type="text" data-ng-model="firstName"><br />
+					lastName :<input type="text" data-ng-model="lastName"><br />
+					<br />
+					Name:{{firstName + " " + lastName}}
+				</p>
+			</div>
+			
+			<script>
+				var app=angular.module("myApp",[]);
+				app.controller("personCtrl",function($scope){
+					$scope.firstName = "John";
+					$scope.lastName="Doe";
+					$scope.myVar = false;
+					$scope.toggle=function(){
+						$scope.myVar = !$scope.myVar;
+					}
+				});
+			</script>
+		</div>
+	</body>
+</html>

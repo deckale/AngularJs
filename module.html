@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js" ></script>
+	</head>
+	<body>
+		<!-- 模块定义了一个应用程序
+			 模块式应用程序中不同部分的容器
+			  模块式应用控制器的容器
+			  控制器通常属于一个模块
+		-->
+		<div>
+			<!--<div data-ng-app="myApp">...</div>
+			<script>
+				var app = angular.module("myApp",[]);
+			</script>-->
+		</div>
+		
+		<!-- 添加控制器 -->
+		<div>
+			<!--<div data-ng-app="myApp" data-ng-controller="myCtrl">
+				{{firstName + " " + lastName}}
+			</div>
+			
+			<script>
+				var app = angular.module("myApp",[]);
+				app.controller("myCtrl",function($scope){
+					$scope.firstName = "John";
+					$scope.lastName="Doe";
+				})
+			</script>-->
+		</div>
+		
+		<div>
+			<!--<div data-ng-app="myApp" runoob-directive>	
+			</div>
+			<script>
+				var app = angular.module("myApp",[]);
+				app.directive("runoobDirective",function(){
+					return{
+						template:"我在指令构造器中创建"
+					};
+				})
+			</script>-->
+		</div>
+		
+		<!-- 模块和控制器包含在js文件中
+			 通常angularjs应用程序将模块和控制器包含在javascript中
+			 在以下实例中,"myApp.js" 包含了应用模块的定义程序,"myCtrl.js"文件包含了控制器
+		-->
+		<div>
+			<div data-ng-app="myApp" data-ng-controller="myCtrl">
+				{{firtstName + " " + lastName}}
+			</div> 
+			<script src="./js/myApp.js"></script>
+			<sciprt src="./js/myCtrl.js"></sciprt>
+		</div>
+		
+	</body>
+</html>

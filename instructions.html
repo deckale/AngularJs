@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js"></script>
+	</head>
+
+	<body>
+
+		<!--<div data-ng-app="">
+			<div data-ng-init="firstName='John'">
+				<p>input : </p>
+				<p>Name:
+					<input type="text" data-ng-model="firstName">
+				</p>
+				<p>你输入的为: {{firstName}}</p>
+			</div>
+
+			<div data-ng-init="quantity=1;price=5">
+				<h2>价格计算器</h2> Quantity:
+				<input type="number" data-ng-model="quantity"> Price :
+				<input type="number" data-ng-model="price">
+
+				<p>
+					<b>TotalPrice : </b> {{quantity*price}}
+				</p>
+
+			</div> -->
+
+		<!--repeat 指令-->
+		<!--<div data-ng-init="names=['Jani','Hege','Kai']">
+				<p>use ng-repeat to loop</p>
+				<ul>
+					<li data-ng-repeat="x in names">
+						{{ x }}
+					</li>
+				</ul>
+			</div>
+
+			<div data-ng-init="names2=[{name:'Jani',country:'Norway'},{name:'Hege',country:'Swden'},{name:'Kai',country:'Denmark'}]">
+				<p>loop object:</p>
+				<ul>
+					<li data-ng-repeat="x in names2">
+						{{ x.name + ',' + x.country}}
+					</li>
+				</ul>
+			</div>
+						
+		</div>-->
+
+		<div data-ng-app="myApp">
+			<runoob-directivee></runoob-directivee>
+			<div runoob-directivea></div>
+			<div class="runoob-directivec"></div>
+			<!-- directive:runoob-directivem -->
+
+			<script type="text/javascript">
+				var app = angular.module("myApp", []);
+				app.directive("runoobDirectivee", function() {
+					return {
+						restrict: "E",
+						template: "<h1>自定义指令E 只支持元素</h1>"
+					};
+				});
+				app.directive("runoobDirectivea", function() {
+					return {
+						restrict: "A",
+						template: "<h1>自定义指令A 只支持属性</h1>"
+					};
+				});
+				app.directive("runoobDirectivec", function() {
+					return {
+						restrict: "C",
+						template: "<h1>自定义指令C 只支持类名</h1>"
+					};
+				});
+				app.directive("runoobDirectivem", function() {
+					return {
+						restrict: "M",
+						replace: true,
+						template: "<h1>自定义指令M 只支持注释</h1>"
+					};
+				});
+				
+				//restrict 默认值为EA,可以通过元素名和属性名来调用指令
+			</script>
+		</div>
+
+	</body>
+
+</html>

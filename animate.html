@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			span {
+			  transition: all linear 0.5s;
+			  background-color: lightblue;
+			  height: 100px;
+			  width: 100px;
+			  position: relative;
+			  top: 0;
+			  left: 0;
+			}
+			
+			.ng-hide {
+			  height: 0;
+			  width: 0;
+			  background-color: transparent;
+			  top:-200px;
+			  left: 200px;
+			}
+		</style>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js"></script>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular-animate.min.js"></script>
+	</head>
+
+	<body>
+		<!-- angularjs提供了动画效果,可以配合css使用  -->
+		<!-- angularjs 使用动画需要引入angular.animate.min.js库
+			 使用animate的时候data-ng-app="ngAnimate"
+		-->
+
+		<div>
+			<div data-ng-app="ngAnimate">
+				hide div:
+				<input type="checkbox" data-ng-model="myCheck">
+				<br />
+				<span data-ng-hide="myCheck" class="frame">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			</div>
+
+		</div>
+	</body>
+
+</html>

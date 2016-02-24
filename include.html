@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js"></script>
+	</head>
+	<body>
+		<!-- include中的值为 'src' 而不是src-->
+		<div data-ng-app="myApp" data-ng-controller="userCtrl">
+			<div class="container">
+				<div data-ng-include="'myUsers_List.html'"></div>
+				<div data-ng-include="'myUsers_Form.html'"></div>
+			</div>
+		</div>
+
+		<script src="./js/myUsers.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js" ></script>
+	</head>
+	<body>
+		<!-- Scope(作用域)是应用在HTML(视图) 和javascript (控制器)之间的纽带
+			 Scope是一个对象,有可用的方法和属性
+			 Scope可应用在视图和控制器中
+		-->
+		
+		<div>
+			<!--<div data-ng-app="myApp" data-ng-controller="myCtrl">
+				<h1>{{carname}}</h1>				
+			</div>
+			<script type="text/javascript">
+				var app = angular.module("myApp",[]);
+				app.controller("myCtrl",function($scope){
+					$scope.carname="Volvo"; //由测试可知,carname只能在controller myCtrl下使用,在其他则无效
+				});
+				
+				//当在控制器汇总添加$scope对象时,视图(HTML)可以获取了这些属性
+				//视图中,你不需要添加$scope前缀,只需要添加属性名即可,如: {{ carname}}
+			</script>-->
+		</div>
+		
+		<!--Scope 概述:
+			AngularJs应用组成如下:
+			View(视图)即HTML
+			Model(模型)即当前视图中可使用的数据
+			Controller(控制器)即Javascript函数,可以添加或修改属性
+		-->
+		
+		<!--如果修改了视图,模型和控制器也会相应更新 -->
+		<div>
+			<!--<div data-ng-app = "myApp2" data-ng-controller = "myCtrl2">
+				
+				<input type="text" data-ng-model="name">
+				<h1>My name is {{name}}</h1>
+				
+			</div>
+			
+			<script>
+				var app = angular.module("myApp2",[]);
+				app.controller("myCtrl2",function($scope){
+					$scope.name = "John Doe";
+				})
+			</script>-->
+		</div>
+		
+		<div>
+			<!--<div data-ng-app = "myApp3" data-ng-controller="myCtrl3">
+				<ul>
+					<li data-ng-repeat="x in names">{{x}}</li>
+				</ul>
+			</div>
+			
+			<script type="text/javascript">
+				var app = angular.module("myApp3",[]);
+				app.controller("myCtrl3",function($scope){
+					$scope.names = ["email","tobias","linus"];
+				});
+			</script>-->
+		</div>
+		
+		<!--所有的应用都有$rootScope,他可以作用在data-ng-app指令包含的所有HTML元素中
+			$rootScope可作用于整个应用中,是各个controller中scope的桥梁.用rootScope定义的值,
+			可以在各个controller中使用.-->
+		<div>
+			<div data-ng-app = "myApp4" data-ng-controller ="myCtrl4">
+				<h1>{{lastname}} 家族成员:</h1>
+				<ul>
+					<li data-ng-repeat="x in names2">{{x}} {{lastname}}</li>
+				</ul>
+			</div>
+			
+			<script>
+				var app4 = angular.module("myApp4",[]);
+				app4.controller("myCtrl4",function($scope,$rootScope){
+					$scope.names2=["emily","tobias","linus"];
+					$rootScope.lastname = "Refsnes";
+				});
+			</script>
+		</div>	
+			
+	</body>
+</html>

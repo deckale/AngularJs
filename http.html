@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="angularjs/1.4.6/angular.min.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<div data-ng-app="myApp" data-ng-controller="customersCtrl">
+				<ul>
+					<li data-ng-repeat="x in names">
+						{{ x.Name + ", " + x.Country}}
+					</li>
+				</ul>
+			</div>
+
+			<script>
+				// $http 是一个用于读取web服务器上数据的服务
+				// $http.get(url)是用于读取服务器数据的函数
+				
+				var app = angular.module("myApp", []);
+				app.controller = ("customersCtrl", function($scope, $http) {
+					$http.get("http://www.runoob.com/try/angularjs/data/Customers_JSON.php").
+					success(function(respoonse) {
+						$scope.names = response.records;
+					});
+				})
+			</script>
+		</div>
+	</body>
+
+</html>

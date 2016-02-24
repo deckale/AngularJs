@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angularjs/1.4.6/angular.min.js" ></script>
+	</head>
+	<body>
+		<!-- HTML控件:
+				input元素
+				select元素
+				button元素
+				textarea元素
+		-->
+		
+		<div>
+			<div data-ng-app="myApp" data-ng-controller="formCtrl">
+				
+				<!-- novalidate 是html5 中新增的特性 禁用浏览器默认的验证 -->
+				<form novalite>
+					FirstName:<br />
+					<input type="text" data-ng-model="user.firstName"><br />
+					LastName :<br />
+					<input type="text" data-ng-model="user.lastName"><br />
+					<br /><br />
+					<button data-ng-click="reset()">RESET</button>
+				</form>
+				
+				<p>form={{user}}</p>
+				<p>master={{master}}</p>
+				
+				<script>
+					var app = angular.module("myApp",[]);
+					app.controller("formCtrl",function($scope){
+						$scope.master={firstName:"John",lastName:"Doe"};
+						$scope.reset=function(){
+							$scope.user=angular.copy($scope.master);
+						};
+						$scope.reset();
+					});
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
